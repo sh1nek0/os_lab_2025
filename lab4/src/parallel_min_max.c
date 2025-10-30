@@ -20,7 +20,7 @@ int pnum = 0;     // количество процессов
 
 // обработчик сигнала SIGALRM
 void timeout_handler(int signum) {
-    printf("⏰ Таймаут! Завершаем все дочерние процессы...\n");
+    printf("Таймаут! Завершение всех дочерних процессов...\n");
     for (int i = 0; i < pnum; i++) {
         if (child_pids[i] > 0) {
             kill(child_pids[i], SIGKILL);
